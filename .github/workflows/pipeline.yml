@@ -26,6 +26,9 @@ jobs:
           pwd
           ls -al
           
+      - name: Generate dependencies lock file
+        run: npm ci
+      
       - name: Build
         run: |
           npm install
@@ -45,8 +48,7 @@ jobs:
   #         node-version: 18.16.1
   #         cache: "npm"
 
-  #     - name: Generate dependencies lock file
-  #       run: npm ci
+
   #     - name: Install dependencies and run tests
   #       run: |
   #         npm install
